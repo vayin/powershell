@@ -29,7 +29,10 @@ This command allows removing one to many users as site collection administrators
 ```powershell
 Remove-PnPSiteCollectionAdmin -Owners "user@contoso.onmicrosoft.com"
 ```
-
+### If the above example is not working, then try the following format
+```powershell
+Get-PnPSiteCollectionAdmin | where {$_.Email -eq "user@contoso.onmicrosoft.com"} | Remove-PnPSiteCollectionAdmin
+```
 This will remove user@contoso.onmicrosoft.com as a site collection owner from the site collection in the current context
 
 ### EXAMPLE 2
